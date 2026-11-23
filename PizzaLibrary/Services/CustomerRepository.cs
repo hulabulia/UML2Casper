@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using PizzaLibrary.Data;
 using PizzaLibrary.Interfaces;
 using PizzaLibrary.Models;
@@ -22,6 +23,12 @@ namespace PizzaLibrary.Services
         public List<Customer> GetAll()
         {
             return _customers.Values.ToList();
+        }
+        public List<Customer> GetClubMembers()
+        {
+            return _customers.Values
+                .Where(customer => customer.ClubMember == true)
+                .ToList();
         }
 
         public void AddCustomer(Customer customer)

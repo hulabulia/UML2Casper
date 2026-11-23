@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using PizzaLibrary.Data;
 using PizzaLibrary.Interfaces;
 using PizzaLibrary.Models;
@@ -12,7 +13,7 @@ namespace PizzaLibrary.Services
 
         public MenuItemRepository()
         {
-            _menuItems = new List<MenuItem>();
+            _menuItems = new List<MenuItem>(MockData.MenuItemData);
         }
 
         public int Count

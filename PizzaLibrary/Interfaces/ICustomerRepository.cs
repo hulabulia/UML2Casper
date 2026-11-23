@@ -8,6 +8,7 @@ namespace PizzaLibrary.Interfaces
     {
         int Count { get; }
         List<Customer> GetAll();
+        List<Customer> GetClubMembers();
         void AddCustomer(Customer customer);
         Customer GetCustomerByMobile(string mobile);
         void RemoveCustomer(string mobile);

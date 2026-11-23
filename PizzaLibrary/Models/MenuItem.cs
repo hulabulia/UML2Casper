@@ -31,7 +31,7 @@ namespace PizzaLibrary.Models
 
         public override string ToString()
         {
-            return $"No: {No}, Name: {Name}, Price: {Price} kr., " +
+            return $"No: {No}, Name: {Name}, Price: {Price} kr, " +
                    $"Description: {Description}, Type: {TheMenuType}";
         }
     }
