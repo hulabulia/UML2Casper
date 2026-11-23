@@ -21,12 +21,16 @@ customerRepo.GetCustomerByMobile("12121212").ClubMember = true;
 
 List<Customer> clubMembers = customerRepo.GetClubMembers();
 
+
+
 Console.WriteLine("===== CLUB MEMBERS =====");
 
 foreach (Customer customer in clubMembers)
 {
     Console.WriteLine(customer);
 }
+
+
 Console.WriteLine();
 Console.WriteLine("===== KUNDER FRA ROSKILDE =====");
 
@@ -37,6 +41,8 @@ foreach (Customer customer in roskildeCustomers)
 {
     Console.WriteLine(customer);
 }
+
+
 Console.WriteLine();
 Console.WriteLine("===== PIZZE CLASSICHE =====");
 
@@ -47,3 +53,27 @@ foreach (MenuItem pizza in classicPizzas)
 {
     Console.WriteLine(pizza);
 }
+
+
+Console.WriteLine();
+Console.WriteLine("===== DYRESTE PIZZA =====");
+
+MenuItem mostExpensivePizza =
+    menuRepo.GetMostExpensiveMenuItemByType(MenuType.PIZZECLASSSICHE);
+
+Console.WriteLine(mostExpensivePizza);
+
+Console.WriteLine();
+Console.WriteLine("===== DYRESTE PIZZA =====");
+
+MenuItem mostExpensive =
+    menuRepo.GetMostExpensivePizza();
+
+Console.WriteLine(mostExpensive);
+
+
+
+Console.WriteLine();
+Console.WriteLine("===== MENU GRUPPERET EFTER TYPE =====");
+
+menuRepo.PrintMenuGroupedByType();

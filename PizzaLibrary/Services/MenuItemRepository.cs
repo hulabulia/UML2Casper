@@ -47,6 +47,33 @@ namespace PizzaLibrary.Services
                 .OrderByDescending(item => item.Price)
                 .FirstOrDefault()!;
         }
+
+        public MenuItem GetMostExpensivePizza()
+        {
+            return _menuItems
+                .Where(item =>
+                    item.TheMenuType == MenuType.PIZZECLASSSICHE ||
+                    item.TheMenuType == MenuType.PIZZESPECIALI)
+                .OrderByDescending(item => item.Price)
+                .FirstOrDefault()!;
+        }
+
+        public void PrintMenuGroupedByType()
+        {
+            foreach (MenuType type in Enum.GetValues(typeof(MenuType)))
+            {
+                Console.WriteLine();
+                Console.WriteLine($"===== {type} =====");
+
+                foreach (MenuItem item in _menuItems)
+                {
+                    if (item.TheMenuType == type)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+            }
+        }
         public void AddMenuItem(MenuItem menuItem)
         {
             _menuItems.Add(menuItem);
