@@ -25,7 +25,28 @@ namespace PizzaLibrary.Services
         {
             return _menuItems;
         }
+        public List<MenuItem> GetMenuItemsByType(MenuType menuType)
+        {
+            List<MenuItem> result = new List<MenuItem>();
 
+            foreach (MenuItem menuItem in _menuItems)
+            {
+                if (menuItem.TheMenuType == menuType)
+                {
+                    result.Add(menuItem);
+                }
+            }
+
+            return result;
+        }
+
+        public MenuItem GetMostExpensiveMenuItemByType(MenuType menuType)
+        {
+            return _menuItems
+                .Where(item => item.TheMenuType == menuType)
+                .OrderByDescending(item => item.Price)
+                .FirstOrDefault()!;
+        }
         public void AddMenuItem(MenuItem menuItem)
         {
             _menuItems.Add(menuItem);

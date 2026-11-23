@@ -10,7 +10,7 @@ namespace PizzaLibrary.Data
         private static Dictionary<string, Customer> _customerData =
             new Dictionary<string, Customer>()
             {
-            { "12121212", new Customer("Mikkel", "12121212", "Street 123") },
+            { "12121212", new Customer("Mikkel", "12121212", "Roskildevej 10, 4000 Roskilde") },
             { "13131313", new Customer("Charlotte", "13131313", "Avenue 321") },
             { "14141414", new Customer("Carina", "14141414", "High Street 234") },
             { "15151515", new Customer("Muhammed", "15151515", "North Street 345") }

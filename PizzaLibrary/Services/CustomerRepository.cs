@@ -24,6 +24,22 @@ namespace PizzaLibrary.Services
         {
             return _customers.Values.ToList();
         }
+        public List<Customer> GetCustomersFromRoskilde()
+        {
+            List<Customer> result = new List<Customer>();
+
+            foreach (Customer customer in _customers.Values)
+            {
+                if (customer.Address.Contains("Roskilde",
+                    StringComparison.OrdinalIgnoreCase))
+                {
+                    result.Add(customer);
+                }
+            }
+
+            return result;
+        }
+
         public List<Customer> GetClubMembers()
         {
             return _customers.Values

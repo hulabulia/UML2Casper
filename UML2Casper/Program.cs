@@ -27,3 +27,23 @@ foreach (Customer customer in clubMembers)
 {
     Console.WriteLine(customer);
 }
+Console.WriteLine();
+Console.WriteLine("===== KUNDER FRA ROSKILDE =====");
+
+List<Customer> roskildeCustomers =
+    customerRepo.GetCustomersFromRoskilde();
+
+foreach (Customer customer in roskildeCustomers)
+{
+    Console.WriteLine(customer);
+}
+Console.WriteLine();
+Console.WriteLine("===== PIZZE CLASSICHE =====");
+
+List<MenuItem> classicPizzas =
+    menuRepo.GetMenuItemsByType(MenuType.PIZZECLASSSICHE);
+
+foreach (MenuItem pizza in classicPizzas)
+{
+    Console.WriteLine(pizza);
+}
