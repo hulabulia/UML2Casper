@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PizzaLibrary/PizzaLibrary.csproj" />
+  <Project Path="UML2Casper/UML2Casper.csproj" />
+</Solution>
